@@ -46,6 +46,7 @@ npx playwright test
 Тесты запускаются автоматически через GitHub Actions при каждом
 push в репозиторий.
 
-https://tests-passed.png/```
+https://tests-passed.png/
+```
 
 <img width="1438" height="659" alt="image" src="https://github.com/user-attachments/assets/7b0a82f7-50be-453c-a4c5-59ddcc9f15ca" />
