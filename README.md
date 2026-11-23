@@ -24,7 +24,6 @@
 
 ## Структура репозитория
 ```text
-.
 ├── .github/
 │   └── workflows/
 │       └── playwright.yml       # CI: запуск тестов на GitHub Actions
@@ -34,7 +33,7 @@
 ├── package.json                 # зависимости и скрипт запуска
 ├── tests-passed.png             # скриншот (если загружали файл)
 └── README.md
-
+```
 ## Запуск локально
 
 ```bash
