@@ -7,9 +7,11 @@ test('Wikipedia: text check, search form, and navigation', async ({ page }) => {
   // ------------------------------------------------------------
   await page.goto('https://www.wikipedia.org/');
 
-  // The main heading "Wikipedia" should be visible.
-  await expect(page.getByRole('heading', { name: 'Wikipedia', exact: true })).toBeVisible();
-  // Also check for the tagline "The Free Encyclopedia".
+  // The main heading contains "Wikipedia" (substring match).
+  // Do NOT use exact: true — the accessible name is not exactly "Wikipedia".
+  await expect(page.getByRole('heading', { name: 'Wikipedia' })).toBeVisible();
+
+  // Also check for the tagline.
   await expect(page.getByText('The Free Encyclopedia')).toBeVisible();
 
   // ------------------------------------------------------------
@@ -29,13 +31,11 @@ test('Wikipedia: text check, search form, and navigation', async ({ page }) => {
   // ------------------------------------------------------------
   // STEP 3: Navigate to another page by clicking a link
   // ------------------------------------------------------------
-  // Click the "Microsoft" link inside the article.
   await page.getByRole('link', { name: 'Microsoft', exact: true }).first().click();
 
   // Verify that the Microsoft page has loaded.
   await expect(page).toHaveURL(/Microsoft/);
-  // Use level: 1 (the article title <h1>) to avoid matching
-  // section headings that also contain the word "Microsoft".
+  // level: 1 restricts the match to the single <h1> article title.
   await expect(
     page.getByRole('heading', { name: 'Microsoft', level: 1 })
   ).toBeVisible();
