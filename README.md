@@ -23,12 +23,16 @@
    `Microsoft`.
 
 ## Структура репозитория
-.
 ├── .github/workflows/playwright.yml # CI: запуск тестов на GitHub Actions
+
 ├── tests/example.spec.js # сам тест
+
 ├── playwright.config.js # конфигурация Playwright
+
 ├── package.json # зависимости и скрипт запуска
+
 ├── tests-passed.png # скриншот успешного прогона
+
 └── README.md
 
 ## Запуск локально
@@ -42,6 +46,6 @@ npx playwright test
 Тесты запускаются автоматически через GitHub Actions при каждом
 push в репозиторий.
 
-https://tests-passed.png/
-```markdown
+https://tests-passed.png/```
+
 <img width="1438" height="659" alt="image" src="https://github.com/user-attachments/assets/7b0a82f7-50be-453c-a4c5-59ddcc9f15ca" />
