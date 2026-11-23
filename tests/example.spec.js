@@ -15,24 +15,22 @@ test('Wikipedia: text check, search form, and navigation', async ({ page }) => {
   // ------------------------------------------------------------
   // STEP 2: Interact with the search form
   // ------------------------------------------------------------
-  // The search input on Wikipedia has the name attribute "search".
   const searchInput = page.locator('input[name="search"]');
   await searchInput.click();
   await searchInput.fill('Playwright (software)');
   await searchInput.press('Enter');
 
-  // Wait for the search results page to load. We expect the
-  // page title or a heading to contain "Playwright".
+  // Wait for the article page to load.
   await expect(page).toHaveURL(/Playwright/);
   await expect(page.getByRole('heading', { name: /Playwright/ })).toBeVisible();
 
   // ------------------------------------------------------------
   // STEP 3: Navigate to another page by clicking a link
   // ------------------------------------------------------------
-  // Click the first link that leads to the "Playwright (software)" article.
-  await page.getByRole('link', { name: 'Playwright (software)' }).first().click();
+  // Click the "Microsoft" link inside the article.
+  await page.getByRole('link', { name: 'Microsoft' }).first().click();
 
-  // Verify that the article page has loaded by checking for a
-  // known phrase in the article.
-  await expect(page.getByText('Playwright is an open-source')).toBeVisible();
+  // Verify that the Microsoft page has loaded.
+  await expect(page).toHaveURL(/Microsoft/);
+  await expect(page.getByRole('heading', { name: 'Microsoft' })).toBeVisible();
 });
