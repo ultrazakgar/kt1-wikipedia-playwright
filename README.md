@@ -23,16 +23,16 @@
    `Microsoft`.
 
 ## Структура репозитория
-├── .github/workflows/playwright.yml # CI: запуск тестов на GitHub Actions
-
-├── tests/example.spec.js # сам тест
-
-├── playwright.config.js # конфигурация Playwright
-
-├── package.json # зависимости и скрипт запуска
-
-├── tests-passed.png # скриншот успешного прогона
-
+```text
+.
+├── .github/
+│   └── workflows/
+│       └── playwright.yml       # CI: запуск тестов на GitHub Actions
+├── tests/
+│   └── example.spec.js          # сам тест
+├── playwright.config.js         # конфигурация Playwright
+├── package.json                 # зависимости и скрипт запуска
+├── tests-passed.png             # скриншот (если загружали файл)
 └── README.md
 
 ## Запуск локально
