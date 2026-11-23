@@ -1,1 +1,11 @@
-
+{
+  "name": "playwright-wikipedia-tests",
+  "version": "1.0.0",
+  "description": "Playwright tests for Wikipedia",
+  "scripts": {
+    "test": "playwright test"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.40.0"
+  }
+}
